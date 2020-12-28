@@ -1,0 +1,20 @@
+<div (scroll)="onWindowScroll();">
+  <!-- header-content start-->
+  <header id="header-sticky" class="header transparent-header pt-70 pl-65 pr-65">
+    <tix-header></tix-header>
+  </header>
+  <!-- header-content end-->
+
+  <!-- main-content start-->
+
+  <main role="main">
+    <router-outlet></router-outlet>
+  </main>
+  <!-- main-content end-->
+
+  <!-- footer-content start-->
+  <footer class="footer__bg pt-75">
+    <tix-footer></tix-footer>
+  </footer>
+  <!-- footer-content start-->
+</div>

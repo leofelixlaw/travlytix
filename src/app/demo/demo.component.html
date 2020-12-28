@@ -1,0 +1,119 @@
+<!-- slider-area -->
+<section id="sub-header" class="sub-header" role="banner" [style.backgroundImage]="'url(../../assets/img/bg/map-bg.png)'">
+  <div>
+    <h3 class="wow fadeInUp" data-wow-delay="0.2s">Request your live demo</h3>
+  </div>
+</section>
+<!-- slider-area-end -->
+
+<!-- Request -->
+<section class="pt-80 pb-80">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-6">
+        <div class="single__features-img">
+          <img class="img-fluid mt-5 wow fadeInLeft" data-wow-delay="0.2s" [src]="'assets/img/features/dashboard.svg'" alt="image-dashboard">
+        </div>
+        <div class="section__title s-featres-title mb-40 mt-40 wow fadeInLeft" data-wow-delay="0.4s">
+          <h2>Learn more about Travlytix</h2>
+        </div>
+        <div class="s-features__list wow fadeInLeft" data-wow-delay="0.4s">
+          <ul>
+            <li>
+              <i class="icon icon icon-tick"></i>
+              <p>Collect, process and store all customer data into single source of truth</p>
+            </li>
+            <li>
+              <i class="icon icon icon-tick"></i>
+              <p>Run data driven marketing and use automation</p>
+            </li>
+            <li>
+              <i class="icon icon icon-tick"></i>
+              <p>Get 360 degree view about all customers</p>
+            </li>
+            <li>
+              <i class="icon icon icon-tick"></i>
+              <p>Analyze in depth using reports</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <!-- request-form -->
+        <div class="section__title mb-50">
+          <span class="wow fadeInUp" data-wow-delay="0.2s">Request Demo</span>
+          <h2 class="wow fadeInUp" data-wow-delay="0.4s">Schedule a live demo with Travlytix</h2>
+        </div>
+        <form class="request-form needs-validation" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="row wow fadeInUp" data-wow-delay="0.6s">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+              <div class="form-group request-form-group">
+                <label class="control-label" for="name">First Name <sup>*</sup></label>
+                <input type="text" formControlName="firstName" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />  
+                <div class="form-icon"><i class="icon icon-single-man-actions"></i></div>
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                  <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12  ">
+              <div class="form-group request-form-group">
+                <label class="control-label" for="name">Last Name <sup>*</sup></label>
+                <input type="text" formControlName="lastName" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />  
+                <div class="form-icon"><i class="icon icon-single-man-actions"></i></div>
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                  <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+              <div class="form-group request-form-group">
+                <label class="control-label" for="email">Email <sup>*</sup></label>
+                <input type="email" formControlName="email" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div class="form-icon"><i class="icon icon-email-action-unread"></i></div>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+              <div class="form-group request-form-group">
+                <label class="control-label" for="phone">Phone <sup>*</sup></label>
+                <input type="text" formControlName="phone" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />  
+                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                  <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                </div>
+                <div class="form-icon"><i class="icon icon-phone"></i></div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+              <div class="form-group request-form-group">
+                <label class="control-label" for="company">Company <sup>*</sup></label>
+                <input type="text" formControlName="company" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f.company.errors }" />  
+                <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                  <div *ngIf="f.company.errors.required">Company name is required</div>
+                </div>
+                <div class="form-icon"><i class="icon icon-single-neutral-id-card-3"></i></div>
+              </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+              <div class="form-group request-form-group">
+                <label class="control-label" for="message">Message</label>
+                <textarea class="form-control form-control-lg" formControlName="message" rows="3"></textarea>
+                <div class="form-icon"><i class="icon icon-messages-bubble-square-text"></i></div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+              <!-- <button type="submit" name="singlebutton" class="btn btn-primary btn-block mt-4">send message</button> -->
+              <button class="btn btn-primary btn-block btn-lg mt-4" type="submit">send message</button>
+              <p><small>We promise we will never SPAM you with unwanted emails.</small></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Request-end -->

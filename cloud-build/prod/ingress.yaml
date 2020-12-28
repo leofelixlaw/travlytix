@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: main-web-ingress
+  annotations:
+    ingress.gcp.kubernetes.io/pre-shared-cert: "main-web-cert"
+spec:
+  rules:
+  - host: travlytix.com
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: main-web-lb-service
+          servicePort: 8001
